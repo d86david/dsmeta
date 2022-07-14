@@ -1,3 +1,5 @@
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import React from "react"
 import BotaoNotificar from "../botaoNotificacao"
 import './styles.css'
@@ -9,10 +11,20 @@ function CardVendas() {
                 <h2 className="dsmeta-titulo-vendas">Vendas</h2>
                 <div>
                     <div className="dsmeta-controle-formulario-container">
-                        <input className="dsmeta-controle-formulario" type="text" />
+                        <DatePicker
+                            selected={new Date()}
+                            onChange={(date: Date) => { }}
+                            className="dsmeta-controle-formulario"
+                            dateFormat="dd/MM/yyyy"
+                        />
                     </div>
                     <div className="dsmeta-controle-formulario-container">
-                        <input className="dsmeta-controle-formulario" type="text" />
+                        <DatePicker
+                            selected={new Date()}
+                            onChange={(date: Date) => { }}
+                            className="dsmeta-controle-formulario"
+                            dateFormat="dd/MM/yyyy"
+                        />
                     </div>
                 </div>
 
