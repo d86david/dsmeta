@@ -1,4 +1,5 @@
-import DatePicker from "react-datepicker";
+import DatePicker,{registerLocale} from "react-datepicker";
+import ptBR from 'date-fns/locale/pt-BR'
 import "react-datepicker/dist/react-datepicker.css";
 import React, { useState } from "react";
 import BotaoNotificar from "../botaoNotificacao";
@@ -24,6 +25,7 @@ function CardVendas() {
                             onChange={(date: Date) => setMinDate(date)}
                             className="dsmeta-controle-formulario"
                             dateFormat="dd/MM/yyyy"
+                            locale={ptBR}
                         />
                     </div>
                     <div className="dsmeta-controle-formulario-container">
@@ -32,6 +34,7 @@ function CardVendas() {
                             onChange={(date: Date) => setMaxDate(date)}
                             className="dsmeta-controle-formulario"
                             dateFormat="dd/MM/yyyy"
+                            locale={ptBR}
                         />
                     </div>
                 </div>
