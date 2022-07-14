@@ -1,10 +1,18 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import React from "react"
-import BotaoNotificar from "../botaoNotificacao"
-import './styles.css'
+import React, { useState } from "react";
+import BotaoNotificar from "../botaoNotificacao";
+import './styles.css';
 
 function CardVendas() {
+
+    const max = new Date();
+
+    const min = new Date(new Date().setDate(new Date().getDate() - 365));
+
+    const [minDate, setMinDate] = useState(min);
+    const [maxDate, setMaxDate] = useState(max);
+
     return (
         <>
             <div className="dsmeta-card">
@@ -12,16 +20,16 @@ function CardVendas() {
                 <div>
                     <div className="dsmeta-controle-formulario-container">
                         <DatePicker
-                            selected={new Date()}
-                            onChange={(date: Date) => { }}
+                            selected={minDate}
+                            onChange={(date: Date) => setMinDate(date)}
                             className="dsmeta-controle-formulario"
                             dateFormat="dd/MM/yyyy"
                         />
                     </div>
                     <div className="dsmeta-controle-formulario-container">
                         <DatePicker
-                            selected={new Date()}
-                            onChange={(date: Date) => { }}
+                            selected={maxDate}
+                            onChange={(date: Date) => setMaxDate(date)}
                             className="dsmeta-controle-formulario"
                             dateFormat="dd/MM/yyyy"
                         />
@@ -91,4 +99,4 @@ function CardVendas() {
     )
 }
 
-export default CardVendas
+export default CardVendas;
